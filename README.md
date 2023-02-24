@@ -61,7 +61,7 @@ OS Kernel donanım ile etikleşimden sorumludur. OS Kernel aynı kalır. Fakat �
 Docker image, Docker konteynerlarının oluşturulmasını sağlayan bir şablon veya kalıp olarak düşünülebilir. Bir Docker image, bir uygulama veya hizmetin çalışması için gereken tüm bileşenleri içerir: kod, bağımlılıklar, yapılandırma dosyaları, ortam değişkenleri vb. Bu nedenle, Docker image'ı, bir sanal makine imajı veya bir uygulama paketi gibi düşünebilirsiniz.
 
 
-![dockerfile_yapısı](https://user-images.githubusercontent.com/81527587/221250772-45fc197b-3173-4531-a206-516cd03b83dc.png)
+
 
 
 Docker image'lar, Dockerfile adı verilen bir dosyada tanımlanır. Dockerfile, bir Docker image'ı oluşturmak için adım adım talimatlar içerir. Örneğin, bir Dockerfile'da, bir işletim sistemi, bir programlama dili yürütme ortamı ve bir uygulama sunucusu kurulumu gibi adımlar yer alabilir. Dockerfile'ı kullanarak Docker image'ınızı oluşturabilir ve ardından bu image'ı bir Docker konteynerında çalıştırabilirsiniz.
@@ -83,7 +83,7 @@ Dockerfile, Docker image'ı oluşturmak için kullanılan bir dosyadır. Bir Doc
 Dockerfile, adım adım talimatlar içeren bir metin dosyasıdır. Bu talimatlar, Docker imajının oluşturulması için gereken her şeyi tanımlar. Örneğin, bir Dockerfile'da, hangi işletim sistemi kullanılacağı, hangi paketlerin kurulacağı, hangi dosyaların Docker imajına dahil edileceği ve hangi komutların çalıştırılacağı gibi adımlar yer alabilir.
 
 Dockerfile'ı kullanarak, Docker imajı, Docker komut satırı aracılığıyla birkaç basit adımda oluşturulabilir. Dockerfile'ı doğru şekilde yapılandırarak, tekrar kullanılabilir, taşınabilir ve ölçeklenebilir Docker imajları oluşturabilirsiniz.
-
+![dockerfile_yapısı](https://user-images.githubusercontent.com/81527587/221250772-45fc197b-3173-4531-a206-516cd03b83dc.png)
 Dockerfile, temel olarak bir adım adım talimatlar dosyasıdır, ancak Dockerfile'da kullanılan komutlar, tüm Docker kullanıcıları tarafından bilinmesi gereken belirli bir yapıya sahip değildir. Bu nedenle, Dockerfile'ın yazımı, Docker kullanımının daha karmaşık ve zorlu bir yönüdür. Ancak, doğru şekilde yapılandırıldığında, Dockerfile, bir uygulamanın bağımlılıklarının ve diğer bileşenlerinin dahil edilmesi ve Docker imajının oluşturulması gibi işlemleri kolaylaştırır.
 
 ## **Dockerfile’dan image nasıl oluşturulur?**
