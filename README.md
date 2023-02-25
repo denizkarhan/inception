@@ -52,9 +52,8 @@ OS Kernel donanım ile etikleşimden sorumludur. OS Kernel aynı kalır. Fakat �
 ![containers-vs-virtual-machines](https://user-images.githubusercontent.com/81527587/221250566-e850f3a1-66a9-438b-8cc5-0508bdda203a.jpeg)
 
     
-    Diğer yandan, konteynerlar, işletim sistemi seviyesinde bir sanallaştırma sağlar. Bir konteyner, ana makinede çalışan bir konteyner motoru tarafından yönetilir ve bir uygulama ve onun bağımlılıklarıyla birlikte bir işletim sistemi çekirdeğini paylaşır. Konteynerlar, uygulamanın yalnızca kendi gereksinim duyduğu kaynaklara erişmesine izin verir ve diğer konteynerlarla kaynakları paylaşabilir. Bu, birkaç avantaj sağlar; daha hafif, daha hızlı başlatılır ve daha az kaynak tüketir.
-    
-    Bu farklılıkların bir sonucu olarak, sanal makineler daha yüksek düzeyde izolasyon sağlar, ancak daha yüksek bellek ve CPU kullanımına ihtiyaç duyarlar. Ayrıca, sanal makinelerin daha uzun süre başlatılması ve oluşturulması gerektiğinden daha yavaş bir performans sergilemesi de mümkündür. Öte yandan, konteynerlar daha hafif ve daha hızlıdır, ancak daha az izolasyon sağlarlar ve sadece aynı işletim sistemi çekirdeğini paylaşan uygulamalar arasında kullanılabilirler.
+Diğer yandan, konteynerlar, işletim sistemi seviyesinde bir sanallaştırma sağlar. Bir konteyner, ana makinede çalışan bir konteyner motoru tarafından yönetilir ve bir uygulama ve onun bağımlılıklarıyla birlikte bir işletim sistemi çekirdeğini paylaşır. Konteynerlar, uygulamanın yalnızca kendi gereksinim duyduğu kaynaklara erişmesine izin verir ve diğer konteynerlarla kaynakları paylaşabilir. Bu, birkaç avantaj sağlar; daha hafif, daha hızlı başlatılır ve daha az kaynak tüketir.
+Bu farklılıkların bir sonucu olarak, sanal makineler daha yüksek düzeyde izolasyon sağlar, ancak daha yüksek bellek ve CPU kullanımına ihtiyaç duyarlar. Ayrıca, sanal makinelerin daha uzun süre başlatılması ve oluşturulması gerektiğinden daha yavaş bir performans sergilemesi de mümkündür. Öte yandan, konteynerlar daha hafif ve daha hızlıdır, ancak daha az izolasyon sağlarlar ve sadece aynı işletim sistemi çekirdeğini paylaşan uygulamalar arasında kullanılabilirler.
  
 ## Image Nedir?
 
@@ -90,36 +89,34 @@ Dockerfile, temel olarak bir adım adım talimatlar dosyasıdır, ancak Dockerfi
 
 Öncelikle Nginx çalışacak örnek bir Dockerfile oluşturalım.
 
-```docker
+* docker
 FROM ubuntu:latest
 RUN apt-get update && apt-get install -y nginx
 WORKDIR /var/www/html
 COPY . . #Hosttaki tüm dosyaları WORKDIR’de belirttiğimiz dizine kopyalıyoruz
 EXPOSE 80/tcp
 CMD ["nginx", " -g daemon off;"]
-```
+
 
 Şimdi Dockerfile’ı image haline getirelim.
 
 Bunun için kullanacağımız komut:
 
-```bash
-**docker image build --tag nginx-dfile .**
-```
+bash
+> docker image build --tag nginx-dfile .
+
 
 Buradaki nokta, ‘bulunduğumuz dizindeki’ Dockerfile’ın derlenmesi gerektiğini belirtir.
 
 Eğer başka bir dizinde ise ( --file ):
 
-```bash
-**docker image build --tag nginx-dfile --file /dizin .**
-```
+bash
+> docker image build --tag nginx-dfile --file /dizin .
 
 Eğer bu Dockerfile’ı Docker Hub’a göndereceksek, buna göre tag kısmını düzenlememiz gerekir:
 
-```bash
-**docker image build --tag ferhatsarikaya/nginx-dfile .**
-```
+bash
+> docker image build --tag ferhatsarikaya/nginx-dfile .
 
 Şimdi gelelim build işleminin tetiklenmesine. Bu işlemi yaptığımızda neler oluyor?
 
