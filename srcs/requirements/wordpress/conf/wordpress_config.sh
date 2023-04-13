@@ -1,4 +1,3 @@
-nfig.sh 
 #!bin/bash
 sleep 10
 if [ ! -e /var/www/wordpress/wp-config.php ]; then
